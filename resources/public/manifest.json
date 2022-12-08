@@ -1,0 +1,5 @@
+{
+  "app.js": "js/app.js",
+  "editor.js": "js/editor.js",
+  "images/.gitkeep": "images/.gitkeep"
+}
