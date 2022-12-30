@@ -1,0 +1,58 @@
+$block: 'wp-block-woocommerce-cart';
+
+.#{$block} {
+	/**
+  * Table with the cart items
+  */
+	.wc-block-cart-items {
+		.wc-block-cart-item__image {
+			@include media-breakpoint-down( sm ) {
+				display: none;
+			}
+		}
+
+		.wc-block-cart-item__product {
+			@include media-breakpoint-down( sm ) {
+				grid-column-start: 1 !important;
+			}
+		}
+
+		.wc-block-components-product-name {
+			color: $body-color;
+			font-weight: $font-weight-bold;
+		}
+
+		.wc-block-components-product-metadata {
+			display: none;
+		}
+
+		.wc-block-components-sale-badge {
+			border-color: theme-color( 'secondary' );
+			margin: 0.5rem 0;
+			color: theme-color( 'secondary' );
+		}
+	}
+
+	/**
+  * Selector quantity
+  */
+	.wc-block-components-quantity-selector {
+		&::after {
+			content: none;
+		}
+
+		.wc-block-components-quantity-selector__input {
+			border: 1px solid gray( 'cararra' );
+		}
+
+		.wc-block-components-quantity-selector__button {
+			background-color: gray( 'cararra' );
+			color: gray( 'empress' );
+
+			@include hover-focus-active {
+				background-color: gray( 'empress' );
+				color: gray( 'cararra' );
+			}
+		}
+	}
+}

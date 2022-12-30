@@ -88,6 +88,8 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('responsive-embeds');
 
+    add_theme_support('custom-logo');
+
     /**
      * Enable HTML5 markup support.
      *

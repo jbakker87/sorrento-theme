@@ -1,0 +1,328 @@
+$label-min-width: 275px;
+
+.woocommerce-checkout .woocommerce {
+	.col-1,
+	.col-2 {
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+
+	/*
+  * Coupon Toggle
+  */
+	.woocommerce-form-coupon-toggle {
+		.showcoupon {
+			color: theme-color( 'primary' );
+		}
+	}
+
+	/*
+  * Coupon Form
+  */
+	form.woocommerce-form-coupon {
+		.form-row {
+			flex-direction: column;
+		}
+
+		.button {
+			width: fit-content;
+		}
+	}
+
+	/*
+  * Form
+  */
+	form {
+		input:not( [type='checkbox'] ) {
+			@extend .form-control;
+			width: 100%;
+		}
+
+		textarea {
+			@extend .form-control;
+			height: 175px;
+		}
+
+		label {
+			min-width: $label-min-width !important;
+
+			&.screen-reader-text {
+				position: relative !important;
+			}
+		}
+
+		.woocommerce-input-wrapper {
+			width: 100%;
+		}
+
+		.form-row {
+			width: 100%;
+			flex-wrap: wrap;
+
+			@include media-breakpoint-up( md ) {
+				flex-wrap: nowrap;
+			}
+		}
+
+		.button {
+			@include button;
+			@include button-color( theme-color( 'secondary' ) );
+		}
+	}
+
+	/*
+  * Checkboxes ship to different address
+  */
+	#ship-to-different-address {
+		padding: 3px;
+		margin: 0 0 6px;
+		font-family: $font-family-base;
+		font-size: $font-size-base;
+		font-weight: $font-weight-normal;
+
+		@include media-breakpoint-down( sm ) {
+			font-size: $small-font-size;
+		}
+
+		.woocommerce-form__label {
+			display: flex;
+			align-items: center;
+			margin: 0;
+			line-height: 2;
+
+			@include media-breakpoint-up( md ) {
+				flex-direction: row-reverse;
+				justify-content: flex-end;
+			}
+
+			input[type='checkbox'] {
+				@include custom-input-icon( '\f0c8', '\f14a', -19px, 0px );
+				margin-right: 2rem;
+			}
+
+			span {
+				@include media-breakpoint-up( md ) {
+					min-width: $label-min-width;
+				}
+			}
+		}
+	}
+
+	/*
+  * Order summary
+  */
+	#order_review_heading {
+		margin-top: 1rem;
+	}
+
+	.woocommerce-checkout-review-order-table {
+		border: 0 !important;
+
+		@include media-breakpoint-up( md ) {
+			padding: $card-padding-md;
+			background: gray( 'cararra' ) !important;
+		}
+	}
+
+	/*
+  * Payment
+  */
+	.woocommerce-checkout-payment {
+		background: transparent !important;
+
+		@include media-breakpoint-up( md ) {
+			padding: $card-padding-md;
+			background: gray( 'cararra' ) !important;
+		}
+	}
+
+	/*
+  * Payment methods
+  */
+	.wc_payment_methods {
+		padding: 0 !important;
+		border: 0 !important;
+
+		li.wc_payment_method {
+			display: flex;
+			flex-wrap: wrap;
+
+			&.payment_method_mollie_wc_gateway_ideal {
+				label {
+					min-width: fit-content !important;
+				}
+			}
+
+			input[type='radio'] {
+				@include custom-input-icon( '\f111', '\f192', 1px, 0px );
+				width: 20px !important;
+				min-width: 20px;
+				margin-right: 0.75rem !important;
+			}
+		}
+	}
+
+	/*
+  * Payment box
+  */
+	.payment_box {
+		background-color: darken( gray( 'cararra' ), 5% ) !important;
+		border-radius: $border-radius-sm !important;
+
+		&::before {
+			border-color: darken( gray( 'cararra' ), 5% ) !important;
+			border-top-color: transparent !important;
+			border-right-color: transparent !important;
+			border-left-color: transparent !important;
+		}
+
+		p:nth-child( 2 ) {
+			position: relative;
+
+			&::after {
+				@include fontawesome( '\f078', $font-weight-normal );
+				position: absolute;
+				top: 12px;
+				right: 20px;
+				color: $body-color;
+				font-size: $font-size-base;
+			}
+		}
+
+		select {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			padding: $input-padding-y $input-padding-x;
+			border: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: $white;
+			border-radius: $input-border-radius;
+			box-shadow: $box-shadow;
+			transition: $transition-base;
+
+			@include hover-focus-active {
+				background-color: gray( 'cararra' );
+				cursor: pointer;
+				outline: none;
+			}
+		}
+	}
+
+	/*
+  * Terms & conditions
+  */
+	.woocommerce-terms-and-conditions-wrapper {
+		padding-top: 1rem;
+		border-top: 1px solid darken( gray( 'cararra' ), 5% );
+		margin-top: 0.5rem;
+	}
+
+	/*
+  * Place order
+  */
+	.place-order {
+		display: flex;
+		flex-direction: column;
+		padding: 0 !important;
+	}
+
+	#place_order {
+		@include button;
+		@include button-color( theme-color( 'secondary' ) );
+		width: fit-content;
+		margin-left: auto;
+		-webkit-font-smoothing: unset;
+	}
+}
+
+/*
+* The code below is the styling for the new Gutenberg checkout block. At the moment it doesn't support payments with Mollie, so that's the reason we are using the "old" way. But there is a chance we want to use this new block in the future.
+*/
+
+// $block: 'wc-block-checkout';
+
+// .#{$block} {
+// 	/**
+//   * Form
+//   */
+// 	.wc-block-checkout__form {
+// 		.wc-block-components-checkout-step__description {
+// 			font-size: $font-size-base;
+
+// 			@include media-breakpoint-down( sm ) {
+// 				font-size: $small-font-size;
+// 			}
+// 		}
+
+// 		.wc-block-components-address-form__city {
+// 			width: calc( 100% - 12px ) !important;
+// 		}
+// 	}
+
+// 	/**
+//   * Form buttons
+//   */
+// 	.wc-block-checkout__actions {
+// 		align-items: stretch;
+
+// 		a,
+// 		button {
+// 			@include media-breakpoint-up( md ) {
+// 				width: calc( 50% - 0.5rem );
+// 			}
+// 		}
+
+// 		.wc-block-components-checkout-return-to-cart-button {
+// 			@include button;
+// 			@include button-outline( theme-color( 'secondary' ) );
+// 			padding: $btn-padding-y $btn-padding-x $btn-padding-y 2.5rem !important;
+// 			font-size: $btn-font-size !important;
+// 			font-weight: $btn-font-weight !important;
+// 			text-align: center;
+
+// 			@include media-breakpoint-down( md ) {
+// 				display: none;
+// 			}
+
+// 			svg {
+// 				margin-left: 0.75rem;
+// 				fill: theme-color( 'secondary' );
+// 			}
+
+// 			@include hover-focus-active {
+// 				svg {
+// 					fill: color-yiq( theme-color( 'secondary' ) );
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	/**
+//   * Checkout order summary
+//   */
+// 	.wc-block-components-order-summary-item {
+// 		.wc-block-components-order-summary-item__image {
+// 			.wc-block-components-product-image {
+// 				display: none;
+// 			}
+
+// 			.wc-block-components-order-summary-item__quantity {
+// 				right: auto;
+// 				left: 0;
+// 				transform: none;
+// 			}
+// 		}
+
+// 		.wc-block-components-order-summary-item__description {
+// 			padding-left: 0;
+
+// 			.wc-block-components-product-metadata {
+// 				display: none;
+// 			}
+// 		}
+// 	}
+// }

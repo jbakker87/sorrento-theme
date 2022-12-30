@@ -1,0 +1,93 @@
+.woocommerce-notices-wrapper {
+	background-color: $white;
+
+	@include media-breakpoint-up( lg ) {
+		max-width: calc(
+			( #{map-get( $container-max-widths, 'lg' ) - $grid-gutter-width} ) /
+				12 * 10
+		) !important;
+	}
+
+	@include media-breakpoint-up( xl ) {
+		max-width: calc(
+			( #{map-get( $container-max-widths, 'xl' ) - $grid-gutter-width} ) /
+				12 * 10
+		) !important;
+	}
+}
+
+/*
+* Messages
+*/
+.woocommerce-message {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	border-top-color: $succes;
+	background-color: rgba( $succes, 0.1 );
+	gap: 0.5rem;
+
+	&::before {
+		top: 50%;
+		color: $succes;
+		transform: translateY( -50% );
+	}
+
+	.button {
+		@include button;
+		@include button-color( $succes );
+		order: 2;
+		padding: 0.5rem 0.75rem !important;
+		font-size: $small-font-size !important;
+		font-weight: $btn-font-weight !important;
+
+		@include media-breakpoint-up( md ) {
+			&:first-of-type {
+				margin-left: auto;
+			}
+		}
+	}
+}
+
+/*
+* Error message
+*/
+.woocommerce-error {
+	border-top-color: $danger;
+	background-color: rgba( $danger, 0.1 );
+
+	&::before {
+		color: $danger;
+	}
+}
+
+/*
+* Info message
+*/
+.woocommerce-info {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	border-top-color: theme-color( 'primary' );
+	background-color: rgba( theme-color( 'primary' ), 0.1 );
+	gap: 0.5rem;
+
+	@include media-breakpoint-up( md ) {
+		justify-content: space-between;
+	}
+
+	&::before {
+		top: 50%;
+		color: theme-color( 'primary' );
+		transform: translateY( -50% );
+	}
+
+	.button {
+		@include button;
+		@include button-color( theme-color( 'primary' ) );
+		order: 2;
+		padding: 0.5rem 0.75rem !important;
+		font-size: $small-font-size !important;
+		font-weight: $btn-font-weight !important;
+	}
+}

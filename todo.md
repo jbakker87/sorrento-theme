@@ -1,0 +1,3 @@
+- Opmaak, ook anchors
+- Vertalingen
+- Webshop verder inrichten

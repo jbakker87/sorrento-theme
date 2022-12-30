@@ -1,5 +1,6 @@
 import {domReady} from '@roots/sage/client';
 import "bootstrap";
+import "./fontawesome";
 
 /**
  * app.main

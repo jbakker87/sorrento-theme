@@ -1,0 +1,10 @@
+/**
+* FontAwesome mixin
+* Usage: @include fontawesome("\f061");
+*/
+@mixin fontawesome( $icon, $font-weight: 100 ) {
+	content: $icon;
+	/* stylelint-disable */
+	font-family: 'Font Awesome 6 Free';
+	font-weight: $font-weight;
+}

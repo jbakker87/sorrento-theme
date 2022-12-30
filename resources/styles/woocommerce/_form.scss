@@ -1,0 +1,61 @@
+/**
+* Buttons
+*/
+.wc-block-components-button {
+	@include button;
+	@include button-color( theme-color( 'secondary' ) );
+	padding: $btn-padding-y $btn-padding-x !important;
+	font-size: $btn-font-size !important;
+	font-weight: $btn-font-weight !important;
+}
+
+/**
+* Text inputs
+*/
+.wc-block-components-text-input {
+	input {
+		&:not( [aria-invalid='true'] ) {
+			border-color: $input-border-color !important;
+
+			@include hover-focus-active {
+				border-color: $input-focus-border-color !important;
+			}
+		}
+
+		@include hover-focus-active {
+			box-shadow: none !important;
+		}
+	}
+}
+
+/**
+* Input select and textarea
+*/
+.components-combobox-control__input,
+.wc-block-components-textarea {
+	border-color: $input-border-color !important;
+
+	@include hover-focus-active {
+		border-color: $input-focus-border-color !important;
+		box-shadow: none !important;
+	}
+}
+
+/**
+* Checkbox
+*/
+.wc-block-components-checkbox {
+	.wc-block-components-checkbox__input {
+		border-color: $input-border-color !important;
+		border-radius: $input-border-radius !important;
+
+		&:checked {
+			border-color: theme-color( 'primary' ) !important;
+			background-color: theme-color( 'primary' ) !important;
+		}
+	}
+
+	.wc-block-components-checkbox__mark {
+		fill: color-yiq( theme-color( 'primary' ) ) !important;
+	}
+}

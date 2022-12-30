@@ -1,0 +1,75 @@
+.woocommerce {
+	.woocommerce-thankyou-order-received {
+		@extend .h2;
+		margin-bottom: 1.5rem;
+	}
+
+	h2 {
+		margin-bottom: 1rem;
+
+		@include media-breakpoint-up( md ) {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.woocommerce-order-overview {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 1rem;
+		background-color: theme-color( 'primary-50' );
+		border-radius: $border-radius-sm;
+		row-gap: 0.5rem;
+
+		li {
+			border: none !important;
+			font-size: $xs-small-font-size !important;
+		}
+
+		@include media-breakpoint-down( md ) {
+			flex-direction: column;
+
+			li {
+				padding: 0 !important;
+				margin: 0 !important;
+
+				&:not( :last-of-type ) {
+					padding-bottom: 1rem !important;
+				}
+			}
+		}
+	}
+
+	.woocommerce-customer-details {
+		.woocommerce-columns--addresses {
+			.woocommerce-column--billing-address,
+			.woocommerce-column--shipping-address {
+				max-width: 100%;
+				flex: 0 0 100%;
+				padding: 0;
+
+				@include media-breakpoint-up( md ) {
+					max-width: calc( 50% - 1rem );
+					flex: 0 0 calc( 50% - 1rem );
+					margin-right: 1rem;
+				}
+
+				address {
+					padding: 1rem;
+					border: none;
+					margin-bottom: 1rem;
+					background-color: theme-color( 'primary-50' );
+					border-radius: $border-radius-sm;
+
+					.woocommerce-customer-details--email {
+						padding-left: 0;
+
+						&::before {
+							content: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
