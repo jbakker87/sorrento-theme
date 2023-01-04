@@ -1,3 +1,3 @@
 - Opmaak, ook anchors
-- Vertalingen
 - Webshop verder inrichten
+- Emails opmaken en in de stijl van sorrento.
