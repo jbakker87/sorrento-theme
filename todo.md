@@ -1,3 +1,4 @@
 - Opmaak, ook anchors
 - Webshop verder inrichten
 - Emails opmaken en in de stijl van sorrento.
+- Bij deployen misschien de build files gewoon in git zetten i.p.v op de server laten draaien.
