@@ -4,38 +4,40 @@ $block: 'shopping-cart';
 	position: relative;
 	min-width: 30px; // Prevent layout shift on page load
 
-	&-icon {
-		border-bottom: none;
-		color: gray( 'dove-gray' );
+	&-wrapper {
+		position: relative;
 
-		&:hover{
-			text-decoration: none;
-
-			.shopping-cart-icon-span {
-				background-color: $theme-color-secondary;
-			}
+		svg {
+			width: 22px;
+			height: 21px;
 		}
 
-		// &::before {
-		// 	@include fontawesome( '\f09a', 300 );
-		// 	color: $black;
-		// 	font-size: $font-size-base * 1.5;
-		// }
+		.shopping-cart-icon{
+			border-bottom: none;
 
-		&-span {
-			position: absolute;
-			top: -3px;
-			right: -10px;
-			display: flex;
-			width: 20px;
-			height: 20px;
-			align-items: center;
-			justify-content: center;
-			background-color: $theme-color-primary;
-			border-radius: 50%;
-			color: $white;
-			font-size: 13px;
-			font-weight: bold;
+			&:hover{
+				text-decoration: none;
+
+				.shopping-cart-icon-span {
+					background-color: $theme-color-secondary;
+				}
+			}
+
+			&-span {
+				position: absolute;
+				top: -3px;
+				right: -10px;
+				display: flex;
+				width: 17px;
+				height: 16px;
+				align-items: center;
+				justify-content: center;
+				background-color: $theme-color-primary;
+				border-radius: 50%;
+				color: $white;
+				font-size: 11px;
+				font-weight: bold;
+			}
 		}
 	}
 }
