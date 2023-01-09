@@ -1,0 +1,23 @@
+$block: 'wc-restaurant-menu';
+
+.#{$block} {
+    &-product {
+        &-inner {
+            .details {
+                .name {
+                    color: $black;
+                }
+    
+                .buy-button {
+                    button {
+                        background-color: $theme-color-primary;
+    
+                        &:hover {
+                            filter: brightness(85%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
