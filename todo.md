@@ -1,4 +1,10 @@
 - Opmaak, ook anchors
+- Opmaak winkelmand en afrekenen
+- Betaalmethoden toevoegen en opmaken
 - Webshop verder inrichten
 - Emails opmaken en in de stijl van sorrento.
 - Bij deployen misschien de build files gewoon in git zetten i.p.v op de server laten draaien.
+- Bevestigingen en validaties formulieren
+- Theme/app folder structueren
+- Mobiele menu 
+- Footer toevoegen
