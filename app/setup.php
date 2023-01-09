@@ -132,7 +132,42 @@ add_action('widgets_init', function () {
     ] + $config);
 
     register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
-    ] + $config);
+        'name' => __('Footer kolom 1', 'sage'),
+        'id' => 'footer-1',
+        'description' => __('Footer widget area 1', 'sage'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="h5 | widget-title">',
+        'after_title' => '</div>'
+    ]);
+
+    register_sidebar([
+        'name' => __('Footer kolom 2', 'sage'),
+        'id' => 'footer-2',
+        'description' => __('Footer widget area 2', 'sage'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="h5 | widget-title">',
+        'after_title' => '</div>'
+    ]);
+
+    register_sidebar([
+        'name' => __('Footer kolom 3', 'sage'),
+        'id' => 'footer-3',
+        'description' => __('Footer widget area 3', 'sage'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="h5 | widget-title">',
+        'after_title' => '</div>'
+    ]);
+
+    register_sidebar([
+            'name' => __('Footer kolom 4', 'sage'),
+            'id' => 'footer-4',
+            'description' => __('Footer widget area 4', 'sage'),
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<div class="h5 | widget-title">',
+            'after_title' => '</div>'
+    ]);
 });
