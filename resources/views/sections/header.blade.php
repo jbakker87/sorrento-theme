@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         @if (has_custom_logo())
-            <a class="brand" href="{{ home_url('/') }}">{!! get_custom_logo() !!}</a>
+            {!! get_custom_logo() !!}
         @endif
         @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu(['theme_location' => 'primary_navigation',

@@ -1,0 +1,16 @@
+$block: 'gform';
+
+.#{$block} {
+    &_footer {
+        input[type=submit] {
+            border: none;
+            background-color: $theme-color-primary;
+            color: $white;
+            padding: $font-size-base * 0.5;
+
+            &:hover {
+                filter: brightness(85%);
+            }
+        }
+    }
+}

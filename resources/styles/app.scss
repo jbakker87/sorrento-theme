@@ -1,11 +1,10 @@
-// @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
-// @import 'tailwindcss/utilities';
 @import "settings/colors";
 @import "bootstrap";
 @import "tools/mixins";
+@import "layouts/page";
 @import "components/_navbar.scss";
-@import "woocommerce/_cart-icon.scss";
+@import "blocks/gravityforms/style";
+@import "woocommerce/_woocommerce.scss";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
