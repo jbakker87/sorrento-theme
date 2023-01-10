@@ -1,6 +1,38 @@
 .brand {
-  margin-right: 2rem;
-  font-size: 5.2em;
-  text-decoration: none;
-  color:black;
+    margin-right: 2rem;
+    font-size: 5.2em;
+    text-decoration: none;
+    color:black;
+}
+
+@include media-breakpoint-up( lg ) {
+    nav.navbar {
+        .collapse {
+            display: block !important;
+        }
+    }
+}
+
+@include media-breakpoint-down( lg ) {
+    nav.navbar {
+        flex-direction: row-reverse;
+
+        .collapse {
+            overflow: hidden;
+            &:not(.show) {
+                display: block;
+                max-height: 0;
+            }
+    
+            transition: max-height 0.15s ease-out;
+    
+            &.show {
+                // transition: all 2s ease-in-out;  
+                // height: auto; 
+                overflow: visible;
+                max-height: 500px;
+                transition: max-height 0.25s ease-in;
+            }
+        }
+    }
 }

@@ -1,3 +1,5 @@
+- Mobiele menu opmaken on hover
+- Footer opmaken naar zwart met witte tekst?
 - Opmaak, ook anchors
 - Opmaak winkelmand en afrekenen
 - Betaalmethoden toevoegen en opmaken
@@ -6,5 +8,3 @@
 - Bij deployen misschien de build files gewoon in git zetten i.p.v op de server laten draaien.
 - Bevestigingen en validaties formulieren
 - Theme/app folder structueren
-- Mobiele menu 
-- Footer toevoegen

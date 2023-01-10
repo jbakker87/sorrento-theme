@@ -1,5 +1,6 @@
 import {domReady} from '@roots/sage/client';
 import "bootstrap";
+import MobileMenu from './components/mobile-menu';
 
 /**
  * app.main
@@ -11,6 +12,8 @@ const main = async (err) => {
   }
 
   // application code
+  const Mobile = new MobileMenu();
+  Mobile.init();
 };
 
 /**
@@ -20,3 +23,5 @@ const main = async (err) => {
  */
 domReady(main);
 import.meta.webpackHot?.accept(main);
+// const Mobile = new MobileMenu();
+//   Mobile.init();
