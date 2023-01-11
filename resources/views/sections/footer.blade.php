@@ -20,7 +20,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-12">
-              <p class="mb-1">&copy; {{ date('Y') }} Copyright - Hoekmontage.nl</p>
+              <p class="mb-1">&copy; {{ date('Y') }} - restaurantsorrento.nl</p>
           </div>
       </div>
   </div>
