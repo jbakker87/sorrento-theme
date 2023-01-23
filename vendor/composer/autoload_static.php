@@ -21,6 +21,7 @@ class ComposerStaticInitad995e567bafd07aaa4092e7ea280903
     );
 
     public static $classMap = array (
+        'App\\Actions\\GravityForms' => __DIR__ . '/../..' . '/app/Actions/GravityForms.php',
         'App\\Providers\\ThemeServiceProvider' => __DIR__ . '/../..' . '/app/Providers/ThemeServiceProvider.php',
         'App\\View\\Components\\Alert' => __DIR__ . '/../..' . '/app/View/Components/Alert.php',
         'App\\View\\Composers\\App' => __DIR__ . '/../..' . '/app/View/Composers/App.php',

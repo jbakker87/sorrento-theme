@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Actions\\GravityForms' => $baseDir . '/app/Actions/GravityForms.php',
     'App\\Providers\\ThemeServiceProvider' => $baseDir . '/app/Providers/ThemeServiceProvider.php',
     'App\\View\\Components\\Alert' => $baseDir . '/app/View/Components/Alert.php',
     'App\\View\\Composers\\App' => $baseDir . '/app/View/Composers/App.php',
