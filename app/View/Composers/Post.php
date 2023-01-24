@@ -36,6 +36,8 @@ class Post extends Composer
      */
     public function title()
     {
+        $this->redirectSingleProduct();
+
         if ($this->view->name() !== 'partials.page-header') {
             return get_the_title();
         }
@@ -65,5 +67,17 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    protected function redirectSingleProduct(): void
+    {
+        if (! get_the_id()) {
+            return;
+        }
+        
+        if (get_post(get_the_id())->post_type === 'product') {
+            wp_safe_redirect('/bestellen/');
+            exit;
+        }
     }
 }

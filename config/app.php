@@ -172,9 +172,7 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\ThemeServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-
+        App\Providers\ThemeServiceProvider::class
     ],
 
     /*
