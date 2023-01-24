@@ -1,9 +1,25 @@
-@import "./settings/bootstrap";
-@import "./settings/variables";
+/*--------------------------------------------------------------
+  Settings
+--------------------------------------------------------------*/
+@import "settings/colors";
+@import "settings/bootstrap";
+@import "settings/variables";
 @import "bootstrap";
 @import "tools/mixins";
+
+/*--------------------------------------------------------------
+  Components
+--------------------------------------------------------------*/
 @import "components/_page.scss";
 @import "components/_footer.scss";
 @import "components/_navbar.scss";
+
+/*--------------------------------------------------------------
+  Blocks
+--------------------------------------------------------------*/
 @import "blocks/gravityforms/style";
+
+/*--------------------------------------------------------------
+  Woocommerce
+--------------------------------------------------------------*/
 @import "woocommerce/_woocommerce.scss";

@@ -5,21 +5,34 @@ $label-min-width: 275px;
 	.col-2 {
 		width: 100%;
 		max-width: 100%;
-		padding: 0;
+		background: $gray-cararra !important;
+		border-radius: $border-radius-sm !important;
 	}
 
-	/*
-  * Coupon Toggle
-  */
+	.col-1 {
+		border-bottom-left-radius: unset !important;
+		border-bottom-right-radius: unset !important;
+		padding: $md-padding $md-padding 0 $md-padding;
+	}
+
+	.col-2 {
+		border-top-left-radius: unset !important;
+		border-top-right-radius: unset !important;
+		padding: 0 $md-padding $md-padding $md-padding;
+	}
+
+	/**
+  	 * Coupon Toggle
+ 	 */
 	.woocommerce-form-coupon-toggle {
 		.showcoupon {
-			color: theme-color( 'primary' );
+			color: $theme-color-primary;
 		}
 	}
 
-	/*
-  * Coupon Form
-  */
+	/**
+  	* Coupon Form
+  	*/
 	form.woocommerce-form-coupon {
 		.form-row {
 			flex-direction: column;
@@ -30,9 +43,9 @@ $label-min-width: 275px;
 		}
 	}
 
-	/*
-  * Form
-  */
+	/**
+  	 * Form
+  	 */
 	form {
 		input:not( [type='checkbox'] ) {
 			@extend .form-control;
@@ -66,8 +79,7 @@ $label-min-width: 275px;
 		}
 
 		.button {
-			@include button;
-			@include button-color( theme-color( 'secondary' ) );
+			@include primary-button();
 		}
 	}
 
@@ -97,7 +109,7 @@ $label-min-width: 275px;
 			}
 
 			input[type='checkbox'] {
-				@include custom-input-icon( '\f0c8', '\f14a', -19px, 0px );
+				// @include custom-input-icon( '\f0c8', '\f14a', -19px, 0px );
 				margin-right: 2rem;
 			}
 
@@ -109,9 +121,9 @@ $label-min-width: 275px;
 		}
 	}
 
-	/*
-  * Order summary
-  */
+	/**
+  	 * Order summary
+  	 */
 	#order_review_heading {
 		margin-top: 1rem;
 	}
@@ -120,26 +132,26 @@ $label-min-width: 275px;
 		border: 0 !important;
 
 		@include media-breakpoint-up( md ) {
-			padding: $card-padding-md;
-			background: gray( 'cararra' ) !important;
+			padding: $md-padding;
+			background: $gray-cararra !important;
 		}
 	}
 
 	/*
-  * Payment
-  */
+     * Payment
+     */
 	.woocommerce-checkout-payment {
 		background: transparent !important;
 
 		@include media-breakpoint-up( md ) {
-			padding: $card-padding-md;
-			background: gray( 'cararra' ) !important;
+			padding: $md-padding;
+			background: $gray-cararra !important;
 		}
 	}
 
 	/*
-  * Payment methods
-  */
+     * Payment methods
+     */
 	.wc_payment_methods {
 		padding: 0 !important;
 		border: 0 !important;
@@ -155,7 +167,7 @@ $label-min-width: 275px;
 			}
 
 			input[type='radio'] {
-				@include custom-input-icon( '\f111', '\f192', 1px, 0px );
+				// @include custom-input-icon( '\f111', '\f192', 1px, 0px );
 				width: 20px !important;
 				min-width: 20px;
 				margin-right: 0.75rem !important;
@@ -163,15 +175,15 @@ $label-min-width: 275px;
 		}
 	}
 
-	/*
-  * Payment box
-  */
+	/**
+     * Payment box
+     */
 	.payment_box {
-		background-color: darken( gray( 'cararra' ), 5% ) !important;
+		background-color: darken( $gray-cararra, 5% ) !important;
 		border-radius: $border-radius-sm !important;
 
 		&::before {
-			border-color: darken( gray( 'cararra' ), 5% ) !important;
+			border-color: darken( $gray-cararra, 5% ) !important;
 			border-top-color: transparent !important;
 			border-right-color: transparent !important;
 			border-left-color: transparent !important;
@@ -204,8 +216,8 @@ $label-min-width: 275px;
 			box-shadow: $box-shadow;
 			transition: $transition-base;
 
-			@include hover-focus-active {
-				background-color: gray( 'cararra' );
+			&:hover {
+				background-color: $gray-cararra;
 				cursor: pointer;
 				outline: none;
 			}
@@ -217,7 +229,7 @@ $label-min-width: 275px;
   */
 	.woocommerce-terms-and-conditions-wrapper {
 		padding-top: 1rem;
-		border-top: 1px solid darken( gray( 'cararra' ), 5% );
+		border-top: 1px solid darken( $gray-cararra, 5% );
 		margin-top: 0.5rem;
 	}
 
@@ -231,8 +243,8 @@ $label-min-width: 275px;
 	}
 
 	#place_order {
-		@include button;
-		@include button-color( theme-color( 'secondary' ) );
+		@include primary-button();
+		// @include button-color( $theme-color-secondary );
 		width: fit-content;
 		margin-left: auto;
 		-webkit-font-smoothing: unset;
@@ -277,8 +289,8 @@ $label-min-width: 275px;
 // 		}
 
 // 		.wc-block-components-checkout-return-to-cart-button {
-// 			@include button;
-// 			@include button-outline( theme-color( 'secondary' ) );
+// 			@include primary-button();
+// 			@include button-outline( $theme-color-secondary );
 // 			padding: $btn-padding-y $btn-padding-x $btn-padding-y 2.5rem !important;
 // 			font-size: $btn-font-size !important;
 // 			font-weight: $btn-font-weight !important;
@@ -290,12 +302,12 @@ $label-min-width: 275px;
 
 // 			svg {
 // 				margin-left: 0.75rem;
-// 				fill: theme-color( 'secondary' );
+// 				fill: $theme-color-secondary;
 // 			}
 
 // 			@include hover-focus-active {
 // 				svg {
-// 					fill: color-yiq( theme-color( 'secondary' ) );
+// 					fill: color-yiq( $theme-color-secondary );
 // 				}
 // 			}
 // 		}

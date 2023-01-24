@@ -3,14 +3,11 @@ $block: 'gform';
 .#{$block} {
     &_footer {
         input[type=submit] {
+            @include primary-button();
+            
             border: none;
-            background-color: $theme-color-primary;
-            color: $white;
             padding: $font-size-base * 0.5;
-
-            &:hover {
-                filter: brightness(85%);
-            }
+            color: $white;
         }
     }
 }

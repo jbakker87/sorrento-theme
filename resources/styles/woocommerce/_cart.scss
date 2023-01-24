@@ -2,8 +2,8 @@ $block: 'wp-block-woocommerce-cart';
 
 .#{$block} {
 	/**
-  * Table with the cart items
-  */
+    * Table with the cart items
+    */
 	.wc-block-cart-items {
 		.wc-block-cart-item__image {
 			@include media-breakpoint-down( sm ) {
@@ -33,26 +33,31 @@ $block: 'wp-block-woocommerce-cart';
 		}
 	}
 
-	/**
-  * Selector quantity
-  */
+    /**
+	* Selector quantity
+    */
 	.wc-block-components-quantity-selector {
 		&::after {
 			content: none;
 		}
 
 		.wc-block-components-quantity-selector__input {
-			border: 1px solid gray( 'cararra' );
+			border: 1px solid #666;
 		}
 
 		.wc-block-components-quantity-selector__button {
-			background-color: gray( 'cararra' );
-			color: gray( 'empress' );
+			@include primary-button();
 
-			@include hover-focus-active {
-				background-color: gray( 'empress' );
-				color: gray( 'cararra' );
-			}
+			opacity: 1;
+			color: $white;
+		}
+	}
+
+	.wc-block-cart__submit {
+		.wc-block-cart__submit-button {
+			@include primary-button();
+
+			border: none !important;
 		}
 	}
 }

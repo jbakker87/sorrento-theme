@@ -17,13 +17,13 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		padding: 1rem;
-		background-color: theme-color( 'primary-50' );
+		background-color: $gray-cararra;
 		border-radius: $border-radius-sm;
 		row-gap: 0.5rem;
 
 		li {
 			border: none !important;
-			font-size: $xs-small-font-size !important;
+			font-size: $font-size-base * 0.6;
 		}
 
 		@include media-breakpoint-down( md ) {
@@ -42,23 +42,42 @@
 
 	.woocommerce-customer-details {
 		.woocommerce-columns--addresses {
+			display: flex;
+			justify-content: space-between;
+
+			@include media-breakpoint-up( xs ){
+				flex-direction: column !important;
+			}
+
+			@include media-breakpoint-up( md ){
+				flex-direction: row !important;
+			}
+
+			.col-1 {
+				margin-right: $xs-margin;
+
+				@include media-breakpoint-down( sm ){
+					margin-bottom: $xs-margin;
+				}
+			}
+
 			.woocommerce-column--billing-address,
 			.woocommerce-column--shipping-address {
 				max-width: 100%;
 				flex: 0 0 100%;
-				padding: 0;
+				padding: $sm-padding;
 
 				@include media-breakpoint-up( md ) {
-					max-width: calc( 50% - 1rem );
-					flex: 0 0 calc( 50% - 1rem );
-					margin-right: 1rem;
+					flex: 0 0 calc( 50% - 0.25rem );
+				}
+
+				h2 {
+					margin-bottom: $xs-padding;
 				}
 
 				address {
-					padding: 1rem;
 					border: none;
-					margin-bottom: 1rem;
-					background-color: theme-color( 'primary-50' );
+					background-color: $gray-cararra;
 					border-radius: $border-radius-sm;
 
 					.woocommerce-customer-details--email {
