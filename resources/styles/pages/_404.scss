@@ -1,0 +1,12 @@
+.error404 {
+    .not-found-icon {
+        display: inline-block;
+        height: 50px;
+
+        svg {
+            height: 100%;
+            fill: $theme-color-primary;
+            vertical-align: inherit;
+        }
+    }
+}

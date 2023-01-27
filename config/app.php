@@ -164,6 +164,7 @@ return [
         Roots\Acorn\Filesystem\FilesystemServiceProvider::class,
         Roots\Acorn\Providers\AcornServiceProvider::class,
         Roots\Acorn\View\ViewServiceProvider::class,
+        Illuminate\Routing\RoutingServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -172,7 +173,8 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\ThemeServiceProvider::class
+        App\Providers\ThemeServiceProvider::class,
+
     ],
 
     /*
