@@ -39,4 +39,22 @@
             }
         }
     }
+
+    nav.navbar {
+        ul {
+            li {
+                a {
+                    &:hover {
+                        color: $theme-color-primary;
+                    }
+                }
+                
+                &.current-menu-item {
+                    a {
+                        color: $theme-color-primary;
+                    }
+               } 
+            }
+        }
+    }
 }
