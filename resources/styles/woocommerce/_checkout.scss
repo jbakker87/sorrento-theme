@@ -102,8 +102,8 @@ $label-min-width: 275px;
 	}
 
 	/*
-  * Checkboxes ship to different address
-  */
+	* Checkboxes ship to different address
+	*/
 	#ship-to-different-address {
 		padding: 3px;
 		margin: 0 0 6px;
@@ -185,10 +185,41 @@ $label-min-width: 275px;
 			}
 
 			input[type='radio'] {
-				// @include custom-input-icon( '\f111', '\f192', 1px, 0px );
+				border: 1px solid $black;
+				border-radius: 35px;
+				height: 20px;
 				width: 20px !important;
-				min-width: 20px;
+				padding: 0;
 				margin-right: 0.75rem !important;
+
+				&:checked {
+					background-color: $theme-color-primary;
+				}
+			}
+
+			&.payment_method_mollie_wc_gateway_creditcard {
+				label {
+					min-width: unset !important;
+				}
+			}
+		}
+	}
+
+	ul.woocommerce-shipping-methods {
+		li {
+			display: flex;
+			
+			input[type='radio'] {
+				border: 1px solid $black;
+				border-radius: 35px;
+				height: 20px;
+				width: 20px !important;
+				padding: 0;
+				margin-right: 0.75rem !important;
+
+				&:checked {
+					background-color: $theme-color-primary;
+				}
 			}
 		}
 	}
@@ -243,8 +274,8 @@ $label-min-width: 275px;
 	}
 
 	/*
-  * Terms & conditions
-  */
+	* Terms & conditions
+	*/
 	.woocommerce-terms-and-conditions-wrapper {
 		padding-top: 1rem;
 		border-top: 1px solid darken( $gray-cararra, 5% );
@@ -252,8 +283,8 @@ $label-min-width: 275px;
 	}
 
 	/*
-  * Place order
-  */
+	* Place order
+	*/
 	.place-order {
 		display: flex;
 		flex-direction: column;
@@ -262,7 +293,6 @@ $label-min-width: 275px;
 
 	#place_order {
 		@include primary-button();
-		// @include button-color( $theme-color-secondary );
 		width: fit-content;
 		margin-left: auto;
 		-webkit-font-smoothing: unset;
