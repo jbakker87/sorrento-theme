@@ -1,0 +1,7 @@
+.button.wc-backward {
+    @include primary-button();
+
+    border: none;
+    padding: $font-size-base * 0.5 !important;
+    color: $white !important;
+}

@@ -1,4 +1,23 @@
 $block: 'wp-block-woocommerce-cart';
+$beforeCartBlock: 'woocommerce-cart';
+
+.#{$beforeCartBlock} {
+	.woocommerce-error {
+		@extend .container;
+
+		background-color: $error-indicator;
+		color: $white;
+		border-radius: $border-radius-theme;
+
+		&::before {
+			color: $white;
+		}
+
+		li, .components-notice__content {
+			margin-left: 35px !important;
+		}
+	}
+}
 
 .#{$block} {
 	/**

@@ -4,7 +4,15 @@
 
 @import '~bootstrap/scss/functions';
 
+/**
+* Margin/paddings.
+*/
 $xs-margin: 0.5rem;
 $xs-padding: 0.5rem;
 $sm-padding: 1rem;
 $md-padding: 1.5rem;
+
+/**
+* Border.
+*/
+$border-radius-theme: 25px;

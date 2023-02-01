@@ -25,8 +25,23 @@ $label-min-width: 275px;
   	 * Coupon Toggle
  	 */
 	.woocommerce-form-coupon-toggle {
-		.showcoupon {
-			color: $theme-color-primary;
+		.woocommerce-info {
+			border: none;
+			background-color: $theme-color-primary;
+			color: $white;
+			border-radius: $border-radius-theme;
+	
+			a.showcoupon {
+				color: $white;
+
+				&:hover {
+					color: $gray-cararra;
+				}
+			}
+	
+			&::before {
+				color: $white;
+			}
 		}
 	}
 
@@ -39,6 +54,9 @@ $label-min-width: 275px;
 		}
 
 		.button {
+			@include primary-button();
+
+			color: $white;
 			width: fit-content;
 		}
 	}
