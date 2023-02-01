@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Theme filters.
- */
-
 namespace App;
 
 // Gravity Forms
