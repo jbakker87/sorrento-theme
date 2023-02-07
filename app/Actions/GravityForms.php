@@ -83,4 +83,27 @@ class GravityForms
 
         return $form;
     }
+
+    /**
+     * Temporary solution.
+     * Fixes the GF merge tags.
+     */
+    public function fixMergeTags()
+    {
+        if (empty($_GET['subview']) || $_GET['subview'] !== 'notification') {
+            return;
+        } ?>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const eventSelect = document.querySelectorAll('[name="_gform_setting_event"');
+    
+            if (!eventSelect.length) {
+                return;
+            }
+    
+            eventSelect[0].setAttribute('id', 'event');
+        });
+    </script>
+    <?php
+    }
 }
