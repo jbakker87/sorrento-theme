@@ -2,6 +2,8 @@
 
 namespace App\Actions;
 
+use \WC_Abstract_Order;
+
 class ThankyouController
 {
     protected string $mollieAPIKey;
@@ -21,7 +23,7 @@ class ThankyouController
     {
         $order = \wc_get_order($orderID);
 
-        if (! $order instanceof \WC_Order || $order->get_status() !== 'pending') {
+        if (! $order instanceof WC_Abstract_Order) {
             return;
         }
         
