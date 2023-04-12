@@ -34,3 +34,29 @@ add_action('woocommerce_checkout_update_order_meta', function ($orderID) {
         update_post_meta($orderID, '_order_delivery_date', \sanitize_text_field($_POST['order_delivery_date']));
     }
 }, 10, 1);
+
+add_action('admin_init', function () {
+    add_settings_section(
+        'delivery_time_section',
+        __('Bezorging'),
+        function () {
+            echo '<p style="margin-bottom: 0;">Voer hier de verwachte bezorgtijd, in minuten, in.</p>';
+        },
+        'general'
+    );
+
+
+    \add_settings_field(
+        'delivery_time',
+        __('Verwachte bezorgtijd'),
+        function ($args) {
+            $option = \get_option($args[0]);
+            echo sprintf('<input type="number" id="%s" name="%s" value="%s" />', $args[0], $args[0], $option);
+        },
+        'general',
+        'delivery_time_section',
+        ['delivery_time']
+    );
+
+    register_setting('general', 'delivery_time', 'esc_attr');
+});

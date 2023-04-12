@@ -1,0 +1,17 @@
+.delivery-box {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  background-color: #ffffff;
+  border: 2px solid $theme-color-primary;
+  z-index: 2;
+  height: 75px;
+  width: 305px;
+  transform: translateX(-50%) translateY(-50%);
+
+  svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+  }
+}
