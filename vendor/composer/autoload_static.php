@@ -88,6 +88,7 @@ class ComposerStaticInit0527f0913feafd913231a29a5dc08ef0
 
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
+        'App\\Actions\\ApiController' => __DIR__ . '/../..' . '/app/Actions/ApiController.php',
         'App\\Actions\\GravityForms' => __DIR__ . '/../..' . '/app/Actions/GravityForms.php',
         'App\\Actions\\ThankyouController' => __DIR__ . '/../..' . '/app/Actions/ThankyouController.php',
         'App\\Actions\\WooCommerce' => __DIR__ . '/../..' . '/app/Actions/WooCommerce.php',

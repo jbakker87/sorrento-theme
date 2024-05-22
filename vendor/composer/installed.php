@@ -3,7 +3,7 @@
         'name' => 'mvdhoek/sorrento-theme',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '01b91e583da984d6a2e178221288c3fe386ac667',
+        'reference' => 'c516e48e4e96e99ef9f3b1f7a5a43e26d57f0418',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'mvdhoek/sorrento-theme' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '01b91e583da984d6a2e178221288c3fe386ac667',
+            'reference' => 'c516e48e4e96e99ef9f3b1f7a5a43e26d57f0418',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

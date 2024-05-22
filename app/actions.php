@@ -11,7 +11,7 @@ add_action('rest_api_init', function () {
         'methods'  => \WP_REST_Server::READABLE,
         'callback' => [ new \App\Actions\ApiController(), 'confirmReservation' ],
         'permission_callback' => function () {
-            return is_user_logged_in();
+            return true;
         }
     ]
     );
