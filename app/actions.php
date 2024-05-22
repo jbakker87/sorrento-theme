@@ -3,13 +3,18 @@
 namespace App;
 
 // API Controller
-add_action( 'rest_api_init', function () {
-    register_rest_route( 'wp/v2/confirm/reservation', '/email/(?P<email>\S+)', 
-    [
+add_action('rest_api_init', function () {
+    register_rest_route(
+        'wp/v2/confirm/reservation',
+        '/email/(?P<email>\S+)',
+        [
         'methods'  => \WP_REST_Server::READABLE,
         'callback' => [ new \App\Actions\ApiController(), 'confirmReservation' ],
-        'permission_callback' => __return_false()
-    ]);
+        'permission_callback' => function () {
+            return is_user_logged_in();
+        }
+    ]
+    );
 });
 // Gravity Forms
 add_action('gform_after_save_form', [ new \App\Actions\GravityForms(), 'defaultSettings' ], 10, 2);
