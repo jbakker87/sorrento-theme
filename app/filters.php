@@ -14,5 +14,5 @@ add_filter('woocommerce_add_to_cart_fragments', [ new \App\Filters\WooCommerce()
 
 // Gravity Forms
 add_filter('gform_phone_formats', [ new \App\Filters\GravityForms(), 'nlPhoneFormat' ], 10, 2);
-add_filter('gform_pre_send_email', [ new \App\Filters\GravityForms(), 'AddDecicionButton' ], 10, 3 );
+add_filter('gform_pre_send_email', [ new \App\Filters\GravityForms(), 'addDecicionButton' ], 10, 4);
 add_filter('gform_disable_auto_update', '__return_true');

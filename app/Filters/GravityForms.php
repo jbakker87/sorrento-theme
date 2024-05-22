@@ -13,29 +13,27 @@ class GravityForms
             'regex'       => '/^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/',
             'instruction' => '(###) ###-####',
         ];
-    
+
         return $phoneFormats;
     }
 
-    public function AddDecicionButton($email, $notification, $entry): array
+    public function addDecicionButton($email, $message_format, $notification, $entry): array
     {
-        if ('Nieuwe online reservering vanaf de website' != $entry['subject'])
-        {
+        if ('Nieuwe online reservering vanaf de website' !== $notification['subject']) {
             return $email;
         }
 
-        $result = preg_match('/<([^>]+)>/', $email['headers']['From'], $matches);
+        $userEmail = rgar($entry, '5');
 
-        if (1 == $result)
-        {
-            $userEmail = $matches[1];
-
-            // Add the HTML code for the buttons
-            $email['message'] .= 
-            '<div style="text-align: center; padding: 20px;">
-                <a href="' . \home_url() . '/wp-json/wp/v2/confirm/reservation/email/' . $userEmail . '" style="background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-right: 10px;">Reservering bevestigen</a>
-            </div>'; 
+        if (empty($userEmail) || ! is_email($userEmail)) {
+            return $email;
         }
+
+        // Add the HTML code for the buttons
+        $email['message'] .=
+        '<div style="text-align: center; padding: 20px;">
+            <a href="' . \home_url() . '/wp-json/wp/v2/confirm/reservation/email/' . $userEmail . '" style="background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-right: 10px;">Reservering bevestigen</a>
+        </div>';
 
         return $email;
     }
