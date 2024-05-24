@@ -13,8 +13,18 @@ add_action('rest_api_init', function () {
         'permission_callback' => function () {
             return true;
         }
-    ]
-    );
+    ]);
+
+    register_rest_route(
+        'wp/v2/confirm/delivery',
+        '/email/(?P<email>\S+)/minutes/(?P<minutes>\S+)',
+        [
+        'methods'  => \WP_REST_Server::READABLE,
+        'callback' => [ new \App\Actions\ApiController(), 'confirmDelivery' ],
+        'permission_callback' => function () {
+            return true;
+        }
+    ]);
 });
 // Gravity Forms
 add_action('gform_after_save_form', [ new \App\Actions\GravityForms(), 'defaultSettings' ], 10, 2);

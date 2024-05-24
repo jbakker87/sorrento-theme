@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$deliveryTimes = ['15', '30', '45', '60'];
+$deliveryTimes = ['45', '60', '75', '90'];
 
 /*
  * @hooked WC_Emails::email_header() Output the email header
@@ -57,7 +57,8 @@ if ( $additional_content ) {
     {
         echo 
         '<button style="padding: 10px; margin-right: 5px; background-color: #999933;">
-            <a style="font-family: ABeeZee, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; color: white" href="' . \home_url() . '/wp-json/wp/v2/confirm/delivery/email/' . $order->get_billing_email() .  '/minutes/' . $time . '">' . sprintf('%s minuten', $time) .'</a>
+            <a style="padding: 20px; font-family: ABeeZee, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; color: white" href="' . \home_url() . '/wp-json/wp/v2/confirm/delivery/email/' . $order->get_billing_email() .  '/minutes/' . $time . '"></a>
+            ' . sprintf('%s minuten', $time) .'
         </button>';
     }
     echo '</div>';
